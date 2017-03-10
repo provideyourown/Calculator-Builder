@@ -1,0 +1,13 @@
+// length = 1 kg / ( 1240kgm^-3 * 3.14159265 * ( 0.003m / 2 )^2 )
+
+//density (text:{Density (g/cm^3)}) = 1.240
+density (select:{Density (gm/cm3), 1.24/PLA-1.24, 1.04/ABS-1.04}) = 1.24
+dia (select:{Diameter (mm), 1.75,3.0}) = 1.75
+length (input:{Length(meters)}) = weight / ( density * 3.14159 * dia * dia * 0.25 )
+weight (input:{Weight(gms)}) = length * density * 3.14159 * dia * dia * 0.25
+volume (text:{Volume(cm3)}) = length * 3.14159 * dia * dia * 0.25
+
+"<hr/>"
+
+price (input:{Price($/kg)}) = 25.00
+cost (text) = price * weight / 1000.0
